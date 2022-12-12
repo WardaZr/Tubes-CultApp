@@ -1,53 +1,45 @@
 package com.tubes.kelompok9.cultapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.tubes.kelompok9.cultapp.adapter.ContentNotesAdapter;
+import com.tubes.kelompok9.cultapp.entity.ContentNotes;
 
-public class UserActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class ContentActivity extends AppCompatActivity {
     private RecyclerView content_view;
+    private ArrayList<ContentNotes> contentDataList;
+    private ContentNotesAdapter adapter;
 
-    private TextView tvUsername, email;
-    private ImageView imgProfil;
+    TextView tvJudul;
+    ImageView imgKonten;
+    private TextView tvJudulkonten;
+    public static final String EXTRA_NAME = "extra_name";
 
-    private Button btnEdit;
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
-
+        setContentView(R.layout.activity_content);
         this.getSupportActionBar().hide();
 
-        tvUsername   = findViewById(R.id.tv_item_username);
-        email        = findViewById(R.id.tv_item_email);
-        imgProfil    = findViewById(R.id.img_profil);
+        tvJudulkonten = findViewById(R.id.tv_kategoriTitle);
+        String name = getIntent().getStringExtra(EXTRA_NAME);
+        tvJudulkonten.setText(name);
+
+        tvJudul      = findViewById(R.id.tv_item_judul);
+        imgKonten    = findViewById(R.id.img_konten);
         content_view = findViewById(R.id.content_view);
-        btnEdit      = findViewById(R.id.btn_edit_profile);
-
-        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
-        content_view.setLayoutManager(layoutManager);
-
-        btnEdit.setOnClickListener(view -> {
-            if (view.getId() == R.id.btn_edit_profile) {
-                Intent moveToEdit = new Intent(UserActivity.this, UserEditActivity.class);
-                startActivity(moveToEdit);
-                finish();
-            }
-        });
 
         bottomNavigationView = findViewById(R.id.bottomNavbar);
         bottomNavigationView.setBackground(null);
@@ -55,17 +47,17 @@ public class UserActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.menu_home:
-                    Intent home = new Intent(UserActivity.this, MainActivity.class);
+                    Intent home = new Intent(ContentActivity.this, MainActivity.class);
                     startActivity(home);
                     finish();
                     break;
                 case R.id.menu_add:
-                    Intent add = new Intent(UserActivity.this, UploadActivity.class);
+                    Intent add = new Intent(ContentActivity.this, UploadActivity.class);
                     startActivity(add);
                     finish();
                     break;
                 case R.id.menu_profil:
-                    Intent user = new Intent(UserActivity.this, UserActivity.class);
+                    Intent user = new Intent(ContentActivity.this, UserActivity.class);
                     startActivity(user);
                     finish();
                     break;

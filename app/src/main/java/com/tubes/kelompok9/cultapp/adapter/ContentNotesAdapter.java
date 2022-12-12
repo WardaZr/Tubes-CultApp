@@ -23,6 +23,20 @@ public class ContentNotesAdapter extends RecyclerView.Adapter<ContentNotesAdapte
         this.mcontext = mcontext;
     }
 
+    public ArrayList<ContentNotes> getListContentNotes() {
+        return listContentNotes;
+    }
+
+    public void setListContentNotes(ArrayList<ContentNotes> listContentNotes) {
+
+        if (listContentNotes.size() > 0) {
+            this.listContentNotes.clear();
+        }
+        this.listContentNotes.addAll(listContentNotes);
+
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

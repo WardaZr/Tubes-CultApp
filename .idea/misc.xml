@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/drawable/button_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_content.xml" value="0.225" />
+        <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_detail_content.xml" value="0.2109375" />
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_main.xml" value="0.2109375" />
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_upload.xml" value="0.225" />
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_user.xml" value="0.225" />
+        <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/activity_user_edit.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/layout/item_note.xml" value="0.225" />
         <entry key="..\:/Users/Lenovo/Documents/SEMESTER 7/MOBILE PROGRAMMING/CultApp/app/src/main/res/menu/navigasi_bawah.xml" value="0.225" />
       </map>

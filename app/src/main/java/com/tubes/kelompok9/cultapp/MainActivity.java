@@ -2,27 +2,36 @@ package com.tubes.kelompok9.cultapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.tubes.kelompok9.cultapp.adapter.ContentNotesAdapter;
+import com.tubes.kelompok9.cultapp.entity.ContentNotes;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView content_view;
+    private ArrayList<ContentNotes> contentDataList;
+    private ContentNotesAdapter adapter;
 
     private TextView tvJudul;
     private ImageView imgKonten;
+    private CardView cvContent;
 
     private ImageButton btnBudaya, btnKuliner, btnTradisi, btnPariwisata;
-    BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +42,25 @@ public class MainActivity extends AppCompatActivity {
         tvJudul      = findViewById(R.id.tv_item_judul);
         imgKonten    = findViewById(R.id.img_konten);
         content_view = findViewById(R.id.content_view);
+        cvContent    = findViewById(R.id.cv_item_note);
 
         GridLayoutManager layoutManager = new GridLayoutManager(this,2);
 
         content_view.setLayoutManager(layoutManager);
 
-        btnBudaya       = findViewById(R.id.btn_budaya);
-        btnTradisi      = findViewById(R.id.btn_tradisi);
-        btnKuliner      = findViewById(R.id.btn_kuliner);
-        btnPariwisata   = findViewById(R.id.btn_pariwisata);
+        contentDataList = new ArrayList<>();
+
+        contentDataList.add(new ContentNotes ("Candi Borobudur",R.drawable.content_exp));
+        contentDataList.add(new ContentNotes("Tradisi Ngaben",R.drawable.content_exp));
+        contentDataList.add(new ContentNotes("Tradisi Mandi Kembang",R.drawable.content_exp));
+        contentDataList.add(new ContentNotes("Suku Sunda",R.drawable.content_exp));
+
+        adapter = new ContentNotesAdapter(contentDataList,this);
+        content_view.setLayoutManager(layoutManager);
+        content_view.setAdapter(adapter);
 
         bottomNavigationView = findViewById(R.id.bottomNavbar);
         bottomNavigationView.setBackground(null);
-        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -55,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.menu_add:
-                    Intent add = new Intent(MainActivity.this, RegisterActivity.class);
+                    Intent add = new Intent(MainActivity.this, UploadActivity.class);
                     startActivity(add);
                     finish();
                     break;
@@ -66,6 +81,44 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             return true;
+        });
+
+        btnBudaya       = findViewById(R.id.btn_budaya);
+        btnTradisi      = findViewById(R.id.btn_tradisi);
+        btnKuliner      = findViewById(R.id.btn_kuliner);
+        btnPariwisata   = findViewById(R.id.btn_pariwisata);
+
+        btnBudaya.setOnClickListener(view -> {
+            if (view.getId() == R.id.btn_budaya) {
+                Intent moveToBudaya = new Intent(MainActivity.this, ContentActivity.class);
+                moveToBudaya.putExtra(ContentActivity.EXTRA_NAME, "Budaya");
+                startActivity(moveToBudaya);
+                finish();
+            }
+        });
+        btnTradisi.setOnClickListener(view -> {
+            if (view.getId() == R.id.btn_tradisi){
+                Intent moveToTradisi = new Intent(MainActivity.this, ContentActivity.class);
+                moveToTradisi.putExtra(ContentActivity.EXTRA_NAME, "Tradisi");
+                startActivity(moveToTradisi);
+                finish();
+            }
+        });
+        btnKuliner.setOnClickListener(view -> {
+            if (view.getId() == R.id.btn_kuliner) {
+                Intent moveToKuliner = new Intent(MainActivity.this, ContentActivity.class);
+                moveToKuliner.putExtra(ContentActivity.EXTRA_NAME, "Kuliner");
+                startActivity(moveToKuliner);
+                finish();
+            }
+        });
+        btnPariwisata.setOnClickListener(view -> {
+            if (view.getId() == R.id.btn_budaya) {
+                Intent moveToPar = new Intent(MainActivity.this, ContentActivity.class);
+                moveToPar.putExtra(ContentActivity.EXTRA_NAME, "Pariwisata");
+                startActivity(moveToPar);
+                finish();
+            }
         });
     }
 }
