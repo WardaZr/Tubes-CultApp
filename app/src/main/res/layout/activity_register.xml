@@ -124,16 +124,16 @@
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
-        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/primaryColor"
         android:fontFamily="@font/poppinsbold"
         android:gravity="center"
         android:padding="5dp"
+        android:textColor="@color/black"
         android:text="Submit"
         android:textAllCaps="false"
-        android:backgroundTint="@color/primaryColor"
         android:textSize="16dp" />
 
     <ImageView

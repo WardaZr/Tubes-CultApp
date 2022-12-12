@@ -41,7 +41,6 @@ public class UserActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavbar);
         bottomNavigationView.setBackground(null);
-        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
