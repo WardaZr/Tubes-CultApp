@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.tubes.kelompok9.cultapp.UserActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints"
+                android:background="@drawable/bg_header"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="Profile"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_profil"
+                    android:src="@drawable/ic_profil"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_item_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:text="@string/Username"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_item_email"
+                        android:text="@string/email"
+                        android:layout_width="match_parent"
+                        android:fontFamily="@font/poppinsregular"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btn_edit_profile"
+                        android:text="Edit Profile"
+                        android:textSize="11dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:backgroundTint="@color/primaryColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="#CDCDCD"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="Posts"
+                    android:fontFamily="@font/poppinsbold"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:drawableRight="@android:drawable/ic_menu_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/content_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    tools:listitem="@layout/item_note" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  Button App Bar  -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollView_top">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:menu="@menu/navigasi_bawah" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
