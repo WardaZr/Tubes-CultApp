@@ -4,4 +4,14 @@
     <string name="Username">Marry De User</string>
     <string name="email">marry@gmail.com</string>
     <string name="kategori" />
+    <string name="splash_screen">Splash Screen</string>
+    <string name="itemjudul">Candy Borobudur</string>
+    <string name="itemkonten">Candy Borobudur adalah rumah kami kami senang disini hingga akhirnya negara api menyerang Candy Borobudur adalah rumah kami kami senang disini hingga akhirnya negara api menyerang</string>
+
+    <string-array name="kategori">
+        <item>Budaya</item>
+        <item>Tradisi</item>
+        <item>Kuliner</item>
+        <item>Pariwisata</item>
+    </string-array>
 </resources>

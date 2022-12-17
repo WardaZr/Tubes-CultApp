@@ -48,28 +48,105 @@
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
+                    android:text="Kategori    :"/>
+
+                <Spinner
+                    android:id="@+id/spnr_kategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:entries="@array/kategori"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="1dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
                     android:text="Judul         :"/>
 
                 <EditText
                     android:id="@+id/edt_judul"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="14dp"
+                    android:hint="masukan judul konten"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="1dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Caption     :"/>
+
+                <EditText
+                    android:id="@+id/edt_caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="masukkan deskripsi konten"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="14dp"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLines="8"
+                    android:minLines="4"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="1dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Gambar  :"/>
+
+                <Button
+                    android:id="@+id/btn_upload_foto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/secondaryColor"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:padding="5dp"
+                    android:textAllCaps="false"
+                    android:text="Upload Photo"/>
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/btn_upload"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:backgroundTint="@color/primaryColor"
                 android:fontFamily="@font/poppinssemibold"
                 android:gravity="center"
                 android:padding="5dp"
+                android:layout_marginTop="30dp"
                 android:textColor="@color/black"
                 android:text="Upload"
                 android:textAllCaps="false"
-                android:textSize="16dp"/>
+                android:textSize="15dp"/>
 
         </LinearLayout>
 

@@ -4,48 +4,47 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class UploadActivity extends AppCompatActivity {
+public class DetailContentActivity extends AppCompatActivity {
 
-    private Button btnUpload, btnUpFoto;
-    private Spinner spnrKategori;
-    private EditText edtJudul, edtDesc;
+    private TextView tvJudul, tvAuthor, tvDesc;
+    private ImageButton btnBack;
+    private ImageView imgKonten;
+
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload);
+        setContentView(R.layout.activity_detail_content);
         this.getSupportActionBar().hide();
 
-        edtJudul     = findViewById(R.id.edt_judul);
-        edtDesc      = findViewById(R.id.edt_caption);
-        spnrKategori = findViewById(R.id.spnr_kategori);
-        btnUpload    = findViewById(R.id.btn_upload);
-        btnUpFoto    = findViewById(R.id.btn_upload_foto);
+        tvJudul   = findViewById(R.id.tv_item_judul);
+        tvAuthor  = findViewById(R.id.tv_item_username);
+        tvDesc    = findViewById(R.id.tv_item_konten);
+        imgKonten = findViewById(R.id.img_item_konten);
 
-        bottomNavigationView = findViewById(R.id.bottomNavbar);
-        bottomNavigationView.setBackground(null);
+        btnBack   = findViewById(R.id.btn_back);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.menu_home:
-                    Intent home = new Intent(UploadActivity.this, MainActivity.class);
+                    Intent home = new Intent(DetailContentActivity.this, MainActivity.class);
                     startActivity(home);
                     finish();
                     break;
                 case R.id.menu_add:
-                    Intent add = new Intent(UploadActivity.this, UploadActivity.class);
+                    Intent add = new Intent(DetailContentActivity.this, UploadActivity.class);
                     startActivity(add);
                     finish();
                     break;
                 case R.id.menu_profil:
-                    Intent user = new Intent(UploadActivity.this, UserActivity.class);
+                    Intent user = new Intent(DetailContentActivity.this, UserActivity.class);
                     startActivity(user);
                     finish();
                     break;

@@ -2,8 +2,6 @@ package com.tubes.kelompok9.cultapp.db;
 
 import android.provider.BaseColumns;
 
-
-
 public class DatabaseUser {
 
     public static final class NoteColumnsUser implements BaseColumns {

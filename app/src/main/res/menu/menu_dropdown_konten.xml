@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/budaya"
+        android:title="Budaya"
+        android:fontFamily="@font/poppinsmedium"/>
+    <item
+        android:id="@+id/tradisi"
+        android:title="Tradisi"
+        android:fontFamily="@font/poppinsmedium"/>
+    <item
+        android:id="@+id/kuliner"
+        android:title="Kuliner"
+        android:fontFamily="@font/poppinsmedium"/>
+    <item
+        android:id="@+id/pariwisata"
+        android:title="Pariwisata"
+        android:fontFamily="@font/poppinsmedium"/>
+</menu>
